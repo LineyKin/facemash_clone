@@ -6,19 +6,19 @@ require_once "db_connect.php";
 require_once "conf.php";
 
 
-$winer = new PlayerWithEloRating($_POST["winer_id"]);
+$winner = new PlayerWithEloRating($_POST["winer_id"]);
 $looser = new PlayerWithEloRating($_POST["looser_id"]);
 
-Logger::insertGameResultInDB($winer->id, $looser->id);
+Logger::insertGameResultInDB($winner->id, $looser->id);
 
 
-$winerRating = $winer->rating;
+$winnerRating = $winner->rating;
 $looserRating = $looser->rating;
 
-$newWinerRating = $winer->calculateNewRating(1, $looserRating);
-$newLooserRating = $looser->calculateNewRating(0, $winerRating);
+$newWinnerRating = $winner->calculateNewRating(1, $looserRating);
+$newLooserRating = $looser->calculateNewRating(0, $winnerRating);
 
-$winer->updateRatingInDB($newWinerRating);
+$winner->updateRatingInDB($newWinnerRating);
 $looser->updateRatingInDB($newLooserRating);
 
 
