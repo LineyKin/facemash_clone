@@ -2,6 +2,7 @@
 
 require_once "db_connect.php";
 require_once "functions.php";
+require_once "conf.php";
 
 $db_server = db_connect_server($db_hostname, $db_user, $db_name);
 
@@ -50,9 +51,9 @@ class GameEngine {
 		$first = rand($from, $to);
 		$second = rand($from, $to);
 
-		while ($first == $second) {
+		/*while ($first == $second) {
 			$second = rand($from, $to);
-		}
+		}*/
 
 		return ['first' => $first, 'second' => $second];
 	}
@@ -60,7 +61,9 @@ class GameEngine {
 
 
 	static function getRandomPairOfPlayers($img_dir) {
-		$number_of_candidates = count(scandir($img_dir)) - 2; //2 левых файла
+        $dir = scandir($img_dir);
+        _p($dir);
+		$number_of_candidates = count($dir) - 2; //2 левых файла
 		$twoRandomNumbers = self::getTwoRandomNumbers(1, $number_of_candidates);
 
 		$pair = [

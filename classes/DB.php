@@ -7,7 +7,7 @@ class DataBase  {
 	function __construct() {
 		$this->hostname = 'localhost';
 		$this->user = 'root';
-		$this->name = 'nameofrussia';
+		$this->name = 'dvastula';
 		$this->server = mysqli_connect($this->hostname, $this->user);
 	}
 
