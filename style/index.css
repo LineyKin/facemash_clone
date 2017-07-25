@@ -1,0 +1,26 @@
+html, body {
+	height: 100%;
+	margin: 0px;
+}
+#center {
+	height: 100%;
+	margin: 0px auto;
+	position: relative;
+}
+
+#ring {
+	position: absolute;
+	top: 50%;
+}
+
+#ring img {
+	height: 370px;
+	width: 370px;
+	cursor: pointer;
+}
+
+.candidate_name {
+	text-align: center;
+	font-family: Verdana;
+	color: #858585;
+}
