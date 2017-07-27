@@ -21,7 +21,7 @@ $newLooserRating = $looser->calculateNewRating(0, $winnerRating);
 $winner->updateRatingInDB($newWinnerRating);
 $looser->updateRatingInDB($newLooserRating);
 
-$new_pair = GameEngine::getRandomPairOfPlayers(IMG_DIR);
+$new_pair = GameEngine::getRandomPairOfPlayers("../".IMG_DIR);
 
 
 $l_id = $new_pair["left"];

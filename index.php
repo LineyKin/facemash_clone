@@ -5,7 +5,9 @@ require_once "classes.php";
 require_once "conf.php";
 
 
+
 $pair = GameEngine::getRandomPairOfPlayers(IMG_DIR);
+
 
 /*$all_pairs = GameEngine::getAllPairs(IMG_DIR);
 _p(json_encode($all_pairs));
