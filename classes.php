@@ -8,3 +8,4 @@ require_once "classes/GameEngine.php";
 require_once "classes/Player.php";
 require_once "classes/PlayerWithEloRating.php";
 require_once "classes/Logger.php";
+require_once "classes/StringConverter.php";

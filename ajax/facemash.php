@@ -1,9 +1,6 @@
 <?php
 
-require_once "../functions.php";
-require_once "../classes.php";
-require_once "../db_connect.php";
-require_once "../conf.php";
+require_once "_connectivity.php";
 
 
 $winner = new PlayerWithEloRating($_POST["winner_id"]);
