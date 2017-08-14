@@ -39,6 +39,8 @@ class GameEngine {
         return $id_pairs;
     }
 
+
+
     static function getTwoRandomNumbers($from, $to) {
         $first = rand($from, $to);
         $second = rand($from, $to);
@@ -49,8 +51,6 @@ class GameEngine {
 
         return ['first' => $first, 'second' => $second];
     }
-
-
 
     static function getRandomPairOfPlayers($img_dir) {
         $dir = scandir($img_dir);

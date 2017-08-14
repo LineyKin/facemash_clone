@@ -11,7 +11,8 @@ $pair = GameEngine::getRandomPairOfPlayers(IMG_DIR);
 
 /*$all_pairs = GameEngine::getAllPairs(IMG_DIR);
 _p(json_encode($all_pairs));
-*/
+_p($all_pairs);*/
+
 
 $l_player = new PlayerWithEloRating($pair["left"]);
 $r_player = new PlayerWithEloRating($pair["right"]);

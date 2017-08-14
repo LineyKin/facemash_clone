@@ -1,13 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Aphazel
- * Date: 28.07.2017
- * Time: 0:11
- */
-
-
 class Player {
 
     public $id, $name, $rating;
