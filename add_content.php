@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset = 'utf-8'>
+    <meta charset='UTF-8'>
     <title>add</title>
     <script type="text/javascript" src="scripts/lib/jquery.min.js"></script>
 </head>
 <body>
-
 <div id="add_project">
     <h2>добавить проект</h2>
     <form>

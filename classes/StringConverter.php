@@ -35,34 +35,37 @@ class StringConverter {
         "ь" => "",
         "э" => "e",
         "ю" => "ju",
-        "я" => "ja"
+        "я" => "ja",
+
+        "А" => "A",
+        "Б" => "B",
+        "В" => "V",
+        "Г" => "G",
+        "Д" => "D",
+        "Е" => "E",
+        "Ё" => "E",
+        "Ж" => "ZH",
+        "З" => "Z",
+        "Л" => "L"
     ];
 
     static function translit($string) {
-        $string = strtolower($string);
-        $string = mb_convert_encoding($string, "windows-1251");
-        $stringLength = strlen($string);
+
         $translitTable = self::TRANSLIT_TABLE;
+        $translitString = strtr($string, $translitTable);
 
-        $newStringAr = [];
+        $arTranslitString = str_split($translitString);
 
-        for ($i=0; $i < $stringLength; $i++) {
-            $sign = $string[$i];
-            $translitSign = $sign;
-
-            if (preg_match("/^[а-я]/iu", $sign)) {
-                $translitSign = $translitTable[$sign];
+        foreach ($arTranslitString as $key => &$sign) {
+            if (!preg_match("/^[a-zа-я0-9]/i", $sign)) {
+                $sign = "_";
             }
-          /*  if (!preg_match("/^[a-zа-я0-9]/i", $sign)) {
-                $translitSign = "_";
-            }*/
-
-            array_push($newStringAr, $translitSign);
         }
 
-        $newString = implode($newStringAr);
-
+        $newString = implode($arTranslitString);
+        $newString = strtolower($newString);
         return $newString;
+
     }
 
 }
