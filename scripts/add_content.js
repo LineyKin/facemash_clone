@@ -9,10 +9,6 @@ $(document).ready(function () {
                 data : {
                     project_name: proj
                 },
-                success: function (data) {
-                    var new_pair = JSON.parse(data);
-                    console.log(new_pair);
-                }
             });
         }
     })

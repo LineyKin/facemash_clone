@@ -6,7 +6,7 @@ require_once "_connectivity.php";
 $winner = new PlayerWithEloRating($_POST["winner_id"]);
 $looser = new PlayerWithEloRating($_POST["looser_id"]);
 
-Logger::insertGameResultInDB($winner->id, $looser->id);
+Logger::insertGameResultIntoDB($winner->id, $looser->id);
 
 
 $winnerRating = $winner->rating;
@@ -39,6 +39,5 @@ $new_players = [
 		"src_img" => $r_player_new->getImgSrc(IMG_DIR),
 	]
 ];
-
 
 echo json_encode($new_players);

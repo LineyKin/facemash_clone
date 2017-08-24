@@ -46,7 +46,32 @@ class StringConverter {
         "Ё" => "E",
         "Ж" => "ZH",
         "З" => "Z",
-        "Л" => "L"
+        "И" => "I",
+        "Й" => "J",
+        "К" => "K",
+        "Л" => "L",
+        "М" => "M",
+        "Н" => "N",
+        "О" => "O",
+        "П" => "P",
+        "Р" => "R",
+        "С" => "S",
+        "Т" => "T",
+        "У" => "U",
+        "Ф" => "F",
+        "Х" => "H",
+        "Ц" => "C",
+        "Ч" => "CH",
+        "Ш" => "SH",
+        "Щ" => "SCH",
+        "Ъ" => "",
+        "Ы" => "Y",
+        "Ь" => "",
+        "Э" => "E",
+        "Ю" => "JU",
+        "Я" => "JA",
+
+        "№" => "_"
     ];
 
     static function translit($string) {
@@ -64,8 +89,8 @@ class StringConverter {
 
         $newString = implode($arTranslitString);
         $newString = strtolower($newString);
-        return $newString;
 
+        return $newString;
     }
 
 }
