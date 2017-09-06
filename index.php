@@ -1,5 +1,6 @@
 <?php
 
+
 require_once "functions.php";
 require_once "classes.php";
 require_once "conf.php";
@@ -29,6 +30,7 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 	<script type="text/javascript" src="scripts/lib/jquery.min.js"></script>
 </head>
 <body>
+
 
 <div id="center">
 	<table id="ring">

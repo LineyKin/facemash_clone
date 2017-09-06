@@ -1,8 +1,18 @@
+<?php
+
+require_once "functions.php";
+require_once "classes.php";
+
+$projects = \Admin::getAllProjects();
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset='UTF-8'>
-    <title>add</title>
+    <title>admin</title>
     <script type="text/javascript" src="scripts/lib/jquery.min.js"></script>
 </head>
 <body>
@@ -28,9 +38,11 @@
                 <td>проект</td>
                 <td>
                     <select id="project_list">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <?php
+                            foreach ($projects as $key => $project) {
+                                echo "<option data-code=".$project['code'].">".$project['proj_name']."</option>";
+                            }
+                        ?>
                     </select>
                 </td>
             </tr>
@@ -38,12 +50,16 @@
                 <td>имя участника</td>
                 <td><input id="name" type="text"></td>
             </tr>
+            <tr>
+                <td>фото участника</td>
+                <td><input id="playerPhoto" type="file"></td>
+            </tr>
         </table>
         <input id="add_player_button" type="button" value="Добавить">
     </form>
 </div>
 
-<script type="text/javascript" src="scripts/add_content.js"></script>
+<script type="text/javascript" src="scripts/admin.js"></script>
 
 </body>
 </html>
