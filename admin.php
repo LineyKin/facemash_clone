@@ -13,7 +13,7 @@ $projects = \Admin::getAllProjects();
 <head>
     <meta charset='UTF-8'>
     <title>admin</title>
-    <script type="text/javascript" src="scripts/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
 </head>
 <body>
 <div id="add_project">
@@ -61,7 +61,7 @@ $projects = \Admin::getAllProjects();
     </form>
 </div>
 
-<script type="text/javascript" src="scripts/admin.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
 
 </body>
 </html>
