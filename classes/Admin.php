@@ -3,13 +3,6 @@
 
 class Admin {
 
-    static  function insertNewProjectIntoDB($name, $code) {
-
-        $query = "INSERT INTO projects (code, proj_name) VALUES ('$code', '$name')";
-        global $db_server;
-        mysqli_query($db_server, "SET NAMES 'utf8'");
-        return mysqli_query($db_server, $query);
-    }
 
     static function getAllProjects() {
         global $db_server;
@@ -17,8 +10,6 @@ class Admin {
         $query = "SELECT * FROM projects";
         $result = mysqli_query($db_server, $query);
         $num_rows = mysqli_num_rows($result);
-
-
 
         $All = [];
         for ($i = 0; $i < $num_rows; $i++ ) {
@@ -29,9 +20,17 @@ class Admin {
             mb_convert_encoding($value['proj_name'], "UTF-8");
         }
 
-
-
         return $All;
+    }
+
+    static function insertNewProjectIntoDB($name, $code) {
+        $query = "INSERT INTO projects (code, proj_name) VALUES ('$code', '$name')";
+        \DB::makeAQueryInUTF8($query);
+    }
+
+    static function insertNewPlayerIntoProject($projectCode, $code, $name) {
+        $query = "INSERT INTO players (project, code, name, rating, wins, fails) VALUES ('$projectCode', '$code', '$name', 400, 0, 0)";
+       \DB::makeAQueryInUTF8($query);
     }
 
 }

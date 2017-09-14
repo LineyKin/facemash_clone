@@ -50,8 +50,7 @@ class PlayerWithEloRating extends Player {
 
         }
 
-        global $db_server;
-        return mysqli_query($db_server, $query);
+        \DB::makeAQuery($query);
     }
 
 }

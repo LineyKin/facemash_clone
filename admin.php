@@ -37,10 +37,12 @@ $projects = \Admin::getAllProjects();
             <tr>
                 <td>проект</td>
                 <td>
-                    <select id="project_list">
+                    <select name="project" id="project_list">
                         <?php
                             foreach ($projects as $key => $project) {
-                                echo "<option data-code=".$project['code'].">".$project['proj_name']."</option>";
+                                $code = $project['code'];
+                                $name = $project['proj_name'];
+                                echo "<option data-code=".$code.">".$name."</option>";
                             }
                         ?>
                     </select>
@@ -52,7 +54,7 @@ $projects = \Admin::getAllProjects();
             </tr>
             <tr>
                 <td>фото участника</td>
-                <td><input id="playerPhoto" type="file"></td>
+                <td><input id="playerPhoto" name="'playerPhoto" type="file"></td>
             </tr>
         </table>
         <input id="add_player_button" type="button" value="Добавить">

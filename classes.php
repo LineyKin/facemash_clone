@@ -10,3 +10,4 @@ require_once "classes/PlayerWithEloRating.php";
 require_once "classes/Logger.php";
 require_once "classes/StringConverter.php";
 require_once "classes/Admin.php";
+require_once "classes/DB.php";
