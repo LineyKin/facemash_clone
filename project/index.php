@@ -6,8 +6,12 @@ require_once "../classes.php";
 require_once "../conf.php";
 
 
+$projectCode = $_GET['code'];
 
-$pair = GameEngine::getRandomPairOfPlayers('../'.IMG_DIR);
+$pair = \GameEngine::getRandomPairOfPlayers('../'.IMG_DIR);
+
+$pair_2 = \GameEngine::getRandomPairOfPlayers_2($projectCode);
+
 
 
 /*$all_pairs = GameEngine::getAllPairs(IMG_DIR);
@@ -33,6 +37,7 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 
 
 <div id="center">
+
 	<table id="ring">
 		<tr>
 			<td>

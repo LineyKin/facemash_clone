@@ -5,10 +5,8 @@ class Admin {
 
 
     static function getAllProjects() {
-        global $db_server;
-        mysqli_query($db_server, "SET NAMES 'utf8'");
         $query = "SELECT * FROM projects";
-        $result = mysqli_query($db_server, $query);
+        $result = \DB::makeAQueryInUTF8($query);
         $num_rows = mysqli_num_rows($result);
 
         $All = [];

@@ -52,6 +52,23 @@ class GameEngine {
         return ['first' => $first, 'second' => $second];
     }
 
+
+    static function getPlayerCodesByProjectCode($projectCode) {
+        $query = "SELECT code FROM players WHERE project = '$projectCode'";
+        $result = \DB::makeAQuery($query);
+
+        $num_rows = mysqli_num_rows($result);
+
+        $All = [];
+        for ($i = 0; $i < $num_rows; $i++ ) {
+            array_push($All, mysqli_fetch_array($result)[0]);
+        }
+
+        return $All;
+    }
+
+
+    // СТАРЫЙ ВЫВОД ПАРЫ (БУДЕТ УДАЛЕНО)
     static function getRandomPairOfPlayers($img_dir) {
         $dir = scandir($img_dir);
         $number_of_candidates = count($dir) - 2; //2 левых файла
@@ -64,6 +81,20 @@ class GameEngine {
 
         return $pair;
 
+    }
+
+    // НОВЫЙ ВЫВОД ПАРЫ
+    static function getRandomPairOfPlayers_2($projectCode) {
+        $players = self::getPlayerCodesByProjectCode($projectCode);
+        $number_of_candidates = count($players) - 1;
+        $twoRandomNumbers = self::getTwoRandomNumbers(1, $number_of_candidates);
+
+        $pair = [
+            "left" => $players[$twoRandomNumbers['first']],
+            "right" => $players[$twoRandomNumbers['second']]
+        ];
+
+        return $pair;
     }
 
 }
