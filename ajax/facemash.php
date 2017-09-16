@@ -7,7 +7,7 @@ $winner = new PlayerWithEloRating($_POST["winner_id"]);
 $looser = new PlayerWithEloRating($_POST["looser_id"]);
 $projectCode = $_POST['projectCode'];
 
-Logger::insertGameResultIntoDB($winner->id, $looser->id);
+Logger::insertGameResultIntoDB($projectCode, $winner->id, $looser->id);
 
 
 $winnerRating = $winner->rating;
