@@ -1,7 +1,12 @@
 var ring = document.getElementById('ring');
 var center = document.getElementById('center');
 
+var loc = window.location;
+var arLoc = loc.search.split('=');
+var projectCode = arLoc[1];
+
 window.onload = function() {
+    ring.style.display = "table";
 	var w = ring.offsetWidth;
 	var h = ring.offsetHeight;
 	center.style.width = w+'px';
@@ -22,7 +27,8 @@ $("#ring img").on("click", function() {
 		url: "../ajax/facemash.php",
 		data: {
 			winner_id: winner_id,
-			looser_id: looser_id
+			looser_id: looser_id,
+            projectCode: projectCode
 		},
 		success: function(data) {
 			var new_pair = JSON.parse(data);

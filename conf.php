@@ -1,3 +1,3 @@
 <?php
 
-define('IMG_DIR', "images/candidates/");
+define('IMG_DIR', "images/");

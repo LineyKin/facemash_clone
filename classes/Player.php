@@ -8,7 +8,7 @@ class Player {
         $this->id = $id;
 
         global $db_server;
-        $query = "SELECT name, rating, wins, fails FROM players WHERE id = '$id'";
+        $query = "SELECT name, code, rating, wins, fails FROM players WHERE id = '$id'";
         mysqli_query($db_server, "SET NAMES 'utf8'");
         $player_info = fromMysqlToArray($query);
 
@@ -16,10 +16,10 @@ class Player {
         $this->rating = mb_convert_encoding($player_info['rating'], "UTF-8");
         $this->wins = $player_info["wins"];
         $this->fails = $player_info["fails"];
+        $this->code = $player_info["code"];
     }
 
     public function getImgSrc($img_dir) {
-        return $img_dir.$this->id.".jpg";
+        return $img_dir.$this->code.".jpg";
     }
-
 }

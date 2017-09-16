@@ -8,16 +8,7 @@ require_once "../conf.php";
 
 $projectCode = $_GET['code'];
 
-$pair = \GameEngine::getRandomPairOfPlayers('../'.IMG_DIR);
-
-$pair_2 = \GameEngine::getRandomPairOfPlayers_2($projectCode);
-
-
-
-/*$all_pairs = GameEngine::getAllPairs(IMG_DIR);
-_p(json_encode($all_pairs));
-_p($all_pairs);*/
-
+$pair = \GameEngine::getRandomPairOfPlayers($projectCode);
 
 $l_player = new PlayerWithEloRating($pair["left"]);
 $r_player = new PlayerWithEloRating($pair["right"]);
@@ -45,7 +36,7 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 					id="l_img" 
 					rating=<?php echo $l_player->rating?> 
 					playerID=<?php echo $l_player->id?> 
-					src=<?php echo $l_player->getImgSrc('../'.IMG_DIR)?>
+					src=<?php echo $l_player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?>
 				>
 			</td>
 			<td>
@@ -53,7 +44,7 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 					id="r_img" 
 					rating=<?php echo $r_player->rating?> 
 					playerID=<?php echo $r_player->id?> 
-					src=<?php echo $r_player->getImgSrc('../'.IMG_DIR)?>
+					src=<?php echo $r_player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?>
 				>
 			</td>
 		</tr>
@@ -63,6 +54,7 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 		</tr>
 	</table>
 </div>
+
 
 <script type="text/javascript" src="../js/index.js"></script>
 
