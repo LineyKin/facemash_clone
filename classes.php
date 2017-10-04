@@ -2,7 +2,7 @@
 require_once "db_connect.php";
 require_once "functions.php";
 
-$db_server = db_connect_server($db_hostname, $db_user, $db_name);
+$db_server = db_connect_server($db_hostname, $db_user, $db_name, $db_password);
 
 require_once "classes/GameEngine.php";
 require_once "classes/Player.php";

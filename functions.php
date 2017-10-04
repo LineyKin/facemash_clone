@@ -1,7 +1,7 @@
 <?php
 
-function db_connect_server($db_hostname, $db_user, $db_name) {
-	$db_server = mysqli_connect($db_hostname, $db_user);
+function db_connect_server($db_hostname, $db_user, $db_name, $db_password) {
+	$db_server = mysqli_connect($db_hostname, $db_user, $db_password);
 	if (!$db_server) die("Невозможно подключиться к MySQL: ".mysqli_error($db_server));
 	mysqli_select_db($db_server, $db_name) or die("Невозможно выбрать базу данных: ". mysqli_error($db_server));
 	return $db_server;
