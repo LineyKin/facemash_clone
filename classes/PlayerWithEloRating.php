@@ -32,13 +32,13 @@ class PlayerWithEloRating extends Player {
         if ($this->gameResult == 1) {
 
             $all_wins = $this->wins + 1;
-            $query = "UPDATE players SET rating = $newRating, wins = $all_wins WHERE id = $this->id;";
+            $query = "UPDATE players SET rating = $newRating, wins = $all_wins WHERE id = $this->id";
 
         }
         else {
 
             $all_fails = $this->fails + 1;
-            $query = "UPDATE players SET rating = $newRating, fails = $all_fails WHERE id = $this->id;";
+            $query = "UPDATE players SET rating = $newRating, fails = $all_fails WHERE id = $this->id";
 
         }
 

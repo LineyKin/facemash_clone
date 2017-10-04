@@ -10,6 +10,10 @@ $projectCode = $_GET['code'];
 
 $pair = \GameEngine::getRandomPairOfPlayers($projectCode);
 
+if (!$pair) {
+    die("in developing...");
+}
+
 $l_player = new PlayerWithEloRating($pair["left"]);
 $r_player = new PlayerWithEloRating($pair["right"]);
 
