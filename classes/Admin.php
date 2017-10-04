@@ -5,7 +5,7 @@ class Admin {
 
 
     static function getAllProjects() {
-        $query = "SELECT * FROM projects";
+        $query = "SELECT * FROM projects  ORDER BY active DESC";
         $result = \DB::makeAQueryInUTF8($query);
         $num_rows = mysqli_num_rows($result);
 

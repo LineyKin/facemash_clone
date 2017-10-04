@@ -8,7 +8,9 @@ require_once "../conf.php";
 
 $projectCode = $_GET['code'];
 
-$pair = \GameEngine::getRandomPairOfPlayers($projectCode);
+$project = new Project($projectCode);
+
+$pair = $project->getRandomPairOfPlayers();
 
 if (!$pair) {
     die("in developing...");
@@ -24,7 +26,7 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 <html>
 <head>
 	<meta charset = 'utf-8'>
-	<title>Имя Росcии</title>
+	<title><?php echo $project->name; ?></title>
 	<link rel="stylesheet" type="text/css" href="../style/index.css">
 	<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
 </head>
