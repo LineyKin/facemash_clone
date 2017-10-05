@@ -6,7 +6,7 @@ require_once "../conf.php";
 
 $projectCode = "imja_rossii";
 
-$res = new Project($projectCode);
+$project = new Project($projectCode);
 
 ?>
 

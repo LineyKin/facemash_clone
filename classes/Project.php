@@ -31,7 +31,7 @@ class Project {
 
         $num_rows = mysqli_num_rows($result);
 
-        if ($num_rows < MINIMUM_OF_PLAYERS_IN_PROJECT) {
+        if ($num_rows < MINIMUM_OF_PLAYERS_IN_PROJECT || $this->active == 0) {
             return false;
         }
 
