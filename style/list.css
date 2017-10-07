@@ -1,0 +1,31 @@
+#h1_title {
+    text-align: center;
+    color: #55598a;
+}
+
+.not_active_proj {
+    color: #853639;
+}
+
+
+img {
+    height: 70px;
+    width: 70px;
+}
+
+table {
+    color: #858585;
+    margin-bottom: 20px;
+}
+
+.number_cell {
+    width: 25px !important;
+}
+
+.name_cell {
+    width: 160px !important;
+}
+
+td span {
+    padding: 5px;
+}

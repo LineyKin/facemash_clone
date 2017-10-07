@@ -59,4 +59,19 @@ class Project {
         return $pair;
     }
 
+
+    function getPlayersOrderByRating() {
+        $query = "SELECT * FROM players WHERE project = '$this->code' ORDER BY rating DESC";
+        $result = \DB::makeAQuery($query);
+
+        $num_rows = mysqli_num_rows($result);
+
+        $arPlayerIDs = [];
+        for ($i = 0; $i < $num_rows; $i++ ) {
+            array_push($arPlayerIDs, mysqli_fetch_array($result));
+        }
+
+        return $arPlayerIDs;
+    }
+
 }

@@ -27,7 +27,7 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 <head>
 	<meta charset = 'utf-8'>
 	<title><?php echo $project->name; ?></title>
-	<link rel="stylesheet" type="text/css" href="../style/index.css">
+	<link rel="stylesheet" type="text/css" href="../style/project.css">
 	<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
 </head>
 <body>
@@ -60,6 +60,8 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 		</tr>
 	</table>
 </div>
+
+<div style="text-align: center"><a href="../list/?code=<?echo $projectCode;?>">list</a></div>
 
 
 <script type="text/javascript" src="../js/index.js"></script>
