@@ -13,6 +13,18 @@ html, body {
     height: 500px;
     overflow-y: scroll;
     overflow-x: hidden;
+    margin: 0px auto;
+    width: 430px;
+    border:  1px solid #eee;
+}
+
+#menu {
+    margin: 0px auto 10px auto;
+
+}
+
+#menu td {
+    padding: 0px 5px;
 }
 
 #list::-webkit-scrollbar

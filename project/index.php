@@ -19,7 +19,7 @@ if (!$pair) {
 $l_player = new PlayerWithEloRating($pair["left"]);
 $r_player = new PlayerWithEloRating($pair["right"]);
 
-_p($_SERVER);
+
 
 ?>
 

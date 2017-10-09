@@ -35,10 +35,16 @@ $list = $project->getPlayersOrderByRating();
 </head>
 <body>
 
-<h1 id="h1_title" class="page-header">Рейтинг проекта "<?php echo $project->name; ?>"</h1>
+<h2 id="h1_title" class="page-header">Рейтинг проекта "<?php echo $project->name; ?>"</h2>
 
-<div class="row">
-    <div id="list" class="col-md-6">
+<table id="menu">
+    <tr>
+        <td><a href="../project/?code=<?php echo $projectCode?>">К выборам</a></td>
+        <td><a href="../../dvastula/">На главную</a></td>
+    </tr>
+</table>
+
+<div id="list" >
         <?php
         $count = 0;
         foreach ($list as $playerKey => $info) {
@@ -72,9 +78,10 @@ $list = $project->getPlayersOrderByRating();
             </table>
 
         <?php } ?>
-    </div>
-    <div class="col-md-6"></div>
 </div>
+
+
+
 
 
 </body>
