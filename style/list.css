@@ -1,11 +1,26 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
 #h1_title {
     text-align: center;
     color: #55598a;
 }
 
-.not_active_proj {
-    color: #853639;
+
+#list {
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+#list::-webkit-scrollbar
+{
+    width: 0px;
+
+}
+
 
 
 img {

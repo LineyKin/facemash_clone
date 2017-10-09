@@ -38,7 +38,7 @@ $list = $project->getPlayersOrderByRating();
 <h1 id="h1_title" class="page-header">Рейтинг проекта "<?php echo $project->name; ?>"</h1>
 
 <div class="row">
-    <div class="col-md-6">
+    <div id="list" class="col-md-6">
         <?php
         $count = 0;
         foreach ($list as $playerKey => $info) {
@@ -52,9 +52,9 @@ $list = $project->getPlayersOrderByRating();
                 $info['fails']
             );
             $count++;
-        ?>
+            ?>
 
-            <table class="table_row">
+            <table>
                 <tr>
                     <td class="number_cell" rowspan="2">
                         <span><?php echo $count; ?></span>
@@ -73,6 +73,7 @@ $list = $project->getPlayersOrderByRating();
 
         <?php } ?>
     </div>
+    <div class="col-md-6"></div>
 </div>
 
 
