@@ -9,19 +9,22 @@ html, body {
 }
 
 #ring {
-	display: none;
+	/*display: none;
 	position: absolute;
-	top: 50%;
+	top: 50%;*/
+
+	margin: 10px auto 0px auto;
+
 }
 .img_wrapper {
-	height: 400px;
-	width: 400px;
+	height: 350px;
+	width: 350px;
 	cursor: pointer;
 	overflow: hidden;
     padding: 0px 5px;
 }
 #ring img {
-	width: 400px;
+	width: 350px;
 	height: auto;
 }
 
