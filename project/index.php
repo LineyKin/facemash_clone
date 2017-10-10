@@ -32,6 +32,15 @@ $r_player = new PlayerWithEloRating($pair["right"]);
     <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
 
 
+    <!--BOOTSTRAP-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!--/BOOTSTRAP-->
+
 
 </head>
 <body>
