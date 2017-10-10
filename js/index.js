@@ -5,13 +5,13 @@ var loc = window.location;
 var arLoc = loc.search.split('=');
 var projectCode = arLoc[1];
 
-/*window.onload = function() {
+window.onload = function() {
     ring.style.display = "table";
     var w = ring.offsetWidth;
     var h = ring.offsetHeight;
     center.style.width = w+'px';
     ring.style.marginTop = -(h/2)+'px';
-};*/
+};
 
 
 $("#ring img").on("click", function() {
