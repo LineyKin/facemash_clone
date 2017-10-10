@@ -27,5 +27,20 @@ html, body {
 .candidate_name {
 	text-align: center;
 	font-family: Verdana;
+	font-size: 18px;
 	color: #858585;
+}
+
+#h1_title {
+    text-align: center;
+    color: #55598a;
+}
+
+
+#menu {
+    margin: 0px auto;
+}
+
+#menu td {
+    padding: 0px 5px;
 }
