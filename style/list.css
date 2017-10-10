@@ -16,6 +16,7 @@ html, body {
     margin: 0px auto;
     width: 430px;
     border:  1px solid #eee;
+    padding-top: 20px;
 }
 
 #menu {
@@ -36,14 +37,14 @@ html, body {
 }
 
 .img_wrapper {
-    height: 70px;
-    width: 70px;
+    height: 90px;
+    width: 90px;
     overflow: hidden;
 }
 
 img {
     height: auto;
-    width: 70px;
+    width: 90px;
 }
 
 table {
@@ -60,5 +61,10 @@ table {
 }
 
 td span {
+    /*
     padding: 5px;
+    */
+
+    padding: 5px;
+    font-size: 15px;
 }
