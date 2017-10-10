@@ -14,13 +14,13 @@ html, body {
 	top: 50%;
 }
 .img_wrapper {
-	height: 370px;
-	width: 370px;
+	height: 450px;
+	width: 450px;
 	cursor: pointer;
 	overflow: hidden;
 }
 #ring img {
-	width: 370px;
+	width: 450px;
 	height: auto;
 }
 
