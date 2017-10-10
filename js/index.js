@@ -1,27 +1,19 @@
-var ring = document.getElementById('ring');
-var center = document.getElementById('center');
+
 
 var loc = window.location;
 var arLoc = loc.search.split('=');
 var projectCode = arLoc[1];
 
-window.onload = function() {
-    ring.style.display = "table";
-	var w = ring.offsetWidth;
-	var h = ring.offsetHeight;
-	center.style.width = w+'px';
-	ring.style.marginTop = -(h/2)+'px';
-};
 
 
-$("#ring img").on("click", function() {
+$(".row img").on("click", function() {
 
 	var winner_id = $(this).attr("playerID");
 	var r_img = $("#r_img");
 	var l_img = $("#l_img");
 	var looser_id = this.id == "l_img" ? r_img.attr("playerID") : l_img.attr("playerID");
 
-	$("#ring").hide();
+	$(".row").hide();
 	$.ajax({
 		type: "POST",
 		url: "../ajax/facemash.php",
@@ -42,7 +34,7 @@ $("#ring img").on("click", function() {
 			$("#l_name").html(new_pair.left.name);
 			$("#r_name").html(new_pair.right.name);
 
-			$("#ring").fadeIn(500);
+			$(".row").fadeIn(500);
 		}
 	})
 });

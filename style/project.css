@@ -19,7 +19,7 @@ html, body {
 	cursor: pointer;
 	overflow: hidden;
 }
-#ring img {
+ img {
 	width: 370px;
 	height: auto;
 }
@@ -28,4 +28,38 @@ html, body {
 	text-align: center;
 	font-family: Verdana;
 	color: #858585;
+}
+
+
+#menu {
+	margin: 0px auto 10px auto;
+
+}
+
+#menu td {
+	padding: 0px 5px;
+}
+
+
+.row table {
+	margin: 0px auto;
+}
+
+#r_table {
+	margin: 0px auto 0px 0px;
+}
+
+#l_table {
+	margin: 0px 0px 0px auto;
+}
+
+@media screen and (max-width: 991px) { /*md - 992px*/
+	#r_table, #l_table {
+		margin: auto;
+	}
+}
+
+.row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
 }
