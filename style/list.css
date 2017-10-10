@@ -33,10 +33,14 @@ html, body {
 
 }
 
-
+.img_wrapper {
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+}
 
 img {
-    height: 70px;
+    height: auto;
     width: 70px;
 }
 

@@ -13,11 +13,15 @@ html, body {
 	position: absolute;
 	top: 50%;
 }
-
-#ring img {
+.img_wrapper {
 	height: 370px;
 	width: 370px;
 	cursor: pointer;
+	overflow: hidden;
+}
+#ring img {
+	width: 370px;
+	height: auto;
 }
 
 .candidate_name {

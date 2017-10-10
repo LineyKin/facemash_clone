@@ -39,20 +39,25 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 	<table id="ring">
 		<tr>
 			<td>
-				<img 
-					id="l_img" 
-					rating=<?php echo $l_player->rating?> 
-					playerID=<?php echo $l_player->id?> 
-					src=<?php echo $l_player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?>
-				>
+				<div class="img_wrapper">
+                    <img
+                            id="l_img"
+                            rating=<?php echo $l_player->rating?>
+                            playerID=<?php echo $l_player->id?>
+                            src=<?php echo $l_player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?>
+                    >
+                </div>
 			</td>
 			<td>
-				<img 
-					id="r_img" 
-					rating=<?php echo $r_player->rating?> 
-					playerID=<?php echo $r_player->id?> 
-					src=<?php echo $r_player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?>
-				>
+				<div class="img_wrapper">
+                    <img
+                            id="r_img"
+                            rating=<?php echo $r_player->rating?>
+                            playerID=<?php echo $r_player->id?>
+                            src=<?php echo $r_player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?>
+
+                    >
+                </div>
 			</td>
 		</tr>
 		<tr>

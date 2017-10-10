@@ -66,7 +66,9 @@ $list = $project->getPlayersOrderByRating();
                         <span><?php echo $count; ?></span>
                     </td>
                     <td rowspan="2">
-                        <img src=<?php echo $player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?> >
+                        <div class="img_wrapper">
+                            <img src=<?php echo $player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?> >
+                        </div>
                     </td>
                     <td class="name_cell"><span><?php echo $player->name?></span></td>
                     <td><span>Доля побед: <?echo $player->getShareOfWins(); ?></span></td>
