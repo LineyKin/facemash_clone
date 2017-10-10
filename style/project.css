@@ -18,6 +18,7 @@ html, body {
 	width: 450px;
 	cursor: pointer;
 	overflow: hidden;
+    padding: 0px 5px;
 }
 #ring img {
 	width: 450px;
@@ -34,6 +35,14 @@ html, body {
 #h1_title {
     text-align: center;
     color: #55598a;
+    border-bottom: 1px solid #eee;
+
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
 }
 
 
@@ -43,4 +52,13 @@ html, body {
 
 #menu td {
     padding: 0px 5px;
+}
+
+
+#menu a {
+
+    color: #337ab7;
+    text-decoration: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
 }
