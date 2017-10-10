@@ -37,9 +37,20 @@ class Player {
         $w = (int) $this->wins;
         $f = (int) $this->fails;
 
-        $r = $w/($w + $f);
-        $r = $r*100;
+        $all = $w + $f;
 
-        return round($r, 2);
+        $r = NULL;
+
+        if ($all > 0) {
+            $r = $w/$all;
+            $r = $r*100;
+            $r = round($r, 2);
+            $r = $r."%";
+        }
+        else {
+            $r = "-";
+        }
+
+        return $r;
     }
 }
