@@ -13,14 +13,44 @@ html, body {
 	position: absolute;
 	top: 50%;
 }
+
+#menu {
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 3;
+}
+#menu table {
+	margin: 10px auto 0px auto;
+}
+
+#menu table td {
+	padding: 0px 5px;
+}
+
+#menu a {
+	text-decoration: none;
+	font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+	color: #337ab7;
+	font-size: 18px;
+}
+
+#h1_title {
+	text-align: center;
+	color: #55598a;
+	font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .img_wrapper {
-	height: 450px;
-	width: 450px;
+	height: 370px;
+	width: 370px;
 	cursor: pointer;
 	overflow: hidden;
 }
 #ring img {
-	width: 450px;
+	width: 370px;
 	height: auto;
 }
 
@@ -28,14 +58,4 @@ html, body {
 	text-align: center;
 	font-family: Verdana;
 	color: #858585;
-}
-
-
-#menu {
-	margin: 0px auto;
-
-}
-
-#menu td {
-	padding: 0px 5px;
 }

@@ -30,13 +30,21 @@ $r_player = new PlayerWithEloRating($pair["right"]);
     <title><?php echo $project->name; ?></title>
     <link rel="stylesheet" type="text/css" href="../style/project.css">
     <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
-
-
 </head>
 <body>
 
 
 <div id="center">
+
+    <div id="menu">
+        <!--<h2 id="h1_title"><?php /*echo $project->name*/?></h2>-->
+        <table>
+            <tr>
+                <td><a href="../list/?code=<?php echo $projectCode?>">К рейтингам</a></td>
+                <td><a href="../../dvastula/">На главную</a></td>
+            </tr>
+        </table>
+    </div>
 
     <table id="ring">
         <tr>
@@ -67,18 +75,7 @@ $r_player = new PlayerWithEloRating($pair["right"]);
             <td class="candidate_name" id="r_name"><?php echo $r_player->name?></td>
         </tr>
     </table>
-
-    <table id="menu">
-        <tr>
-            <td><a href="../list/?code=<?php echo $projectCode?>">К рейтингам</a></td>
-            <td><a href="../../dvastula/">На главную</a></td>
-        </tr>
-    </table>
-
 </div>
-
-
-
 
 <script type="text/javascript" src="../js/index.js"></script>
 
