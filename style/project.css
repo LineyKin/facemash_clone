@@ -44,13 +44,13 @@ html, body {
 }
 
 .img_wrapper {
-	height: 450px;
-	width: 450px;
+	height: 430px;
+	width: 430px;
 	cursor: pointer;
 	overflow: hidden;
 }
 #ring img {
-	width: 450px;
+	width: 430px;
 	height: auto;
 }
 
