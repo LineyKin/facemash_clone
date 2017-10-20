@@ -60,7 +60,7 @@ $list = $project->getPlayersOrderByRating();
             $count++;
             ?>
 
-            <table>
+            <table data-id="<?php echo $player->id; ?>">
                 <tr>
                     <td class="number_cell" rowspan="2">
                         <span><?php echo $count; ?></span>
