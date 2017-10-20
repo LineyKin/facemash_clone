@@ -1,11 +1,8 @@
 <?php
 
-require_once "functions.php";
-require_once "classes.php";
-require_once "conf.php";
+require_once "connectivity.php";
 
 $projects = \Admin::getAllProjects();
-//_p($projects);
 
 ?>
 
@@ -14,7 +11,7 @@ $projects = \Admin::getAllProjects();
 <head>
     <meta charset='utf-8'>
     <title>Main</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="index.css">
 
     <!--BOOTSTRAP-->
     <!-- Latest compiled and minified CSS -->

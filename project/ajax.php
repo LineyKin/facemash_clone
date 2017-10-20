@@ -1,6 +1,7 @@
 <?php
 
-require_once "_connectivity.php";
+require_once "../connectivity.php";
+
 
 
 $winner = new Player($_POST["winner_id"]);

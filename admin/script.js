@@ -6,7 +6,7 @@ $(document).ready(function () {
         if (projectName != null && projectName != "") { // впихнуть потом регулярку
             $.ajax({
                 type: 'POST',
-                url: 'ajax/admin.php',
+                url: 'ajax.php',
                 data : {
                     project_name: projectName
                 },
@@ -34,7 +34,7 @@ $(document).ready(function () {
         form_data.append('name', name);
 
         $.ajax({
-            url: 'ajax/admin.php',
+            url: 'ajax.php',
             dataType: 'text',
             cache: false,
             contentType: false,

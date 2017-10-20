@@ -1,8 +1,7 @@
 <?php
 
-require_once "../functions.php";
-require_once "../classes.php";
-require_once "../conf.php";
+require_once "../connectivity.php";
+
 
 if (!$_GET['code']) {
     die("project is not defined");
@@ -22,7 +21,7 @@ $list = $project->getPlayersOrderByRating();
     <meta charset='utf-8'>
     <title>List</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_js/jquery.min.js"></script>
 </head>
 <body>
 

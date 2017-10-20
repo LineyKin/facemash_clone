@@ -1,16 +1,13 @@
 <?php
 
-
-require_once "../functions.php";
-require_once "../classes.php";
-require_once "../conf.php";
-
+require_once "../connectivity.php";
 
 $projectCode = $_GET['code'];
 
 $project = new Project($projectCode);
 
 $pair = $project->getRandomPairOfPlayers();
+
 
 if (!$pair) {
     die("in developing...");
@@ -26,8 +23,8 @@ $r_player = new Player($pair["right"]);
 <head>
     <meta charset = 'utf-8'>
     <title><?php echo $project->name; ?></title>
-    <link rel="stylesheet" type="text/css" href="../style/project.css">
-    <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="../_js/jquery.min.js"></script>
 </head>
 <body>
 
@@ -82,7 +79,7 @@ $r_player = new Player($pair["right"]);
 
 </div>
 
-<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>

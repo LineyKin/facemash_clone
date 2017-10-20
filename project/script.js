@@ -14,7 +14,7 @@ $("#ring img").on("click", function() {
     $("#ring").hide();
     $.ajax({
         type: "POST",
-        url: "../ajax/facemash.php",
+        url: "ajax.php",
         data: {
             winner_id: winner_id,
             looser_id: looser_id,

@@ -1,8 +1,7 @@
 <?php
 
-require_once "../functions.php";
-require_once "../classes.php";
-require_once "../conf.php";
+require_once "../connectivity.php";
+
 
 $playerID = $_GET['code'];
 

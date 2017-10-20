@@ -1,7 +1,7 @@
 <?php
 
-require_once "../classes.php";
-require_once "../conf.php";
+require_once "../connectivity.php";
+
 
 $projectCode = $_POST['code'];
 
