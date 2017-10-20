@@ -1,17 +1,7 @@
-var ring = document.getElementById('ring');
-var center = document.getElementById('center');
 
 var loc = window.location;
 var arLoc = loc.search.split('=');
 var projectCode = arLoc[1];
-
-window.onload = function() {
-    ring.style.display = "table";
-    var w = ring.offsetWidth;
-    var h = ring.offsetHeight;
-    center.style.width = w+'px';
-    ring.style.marginTop = -(h/2)+'px';
-};
 
 
 $("#ring img").on("click", function() {
@@ -39,8 +29,8 @@ $("#ring img").on("click", function() {
             l_img.attr("playerID", new_pair.left.id);
             r_img.attr("playerID", new_pair.right.id);
 
-            $("#l_name").html(new_pair.left.name);
-            $("#r_name").html(new_pair.right.name);
+            $("#l_name a").html(new_pair.left.name);
+            $("#r_name a").html(new_pair.right.name);
 
             $("#ring").fadeIn(500);
         }

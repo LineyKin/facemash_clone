@@ -1,46 +1,53 @@
 html, body {
 	height: 100%;
 	margin: 0px;
-}
-#center {
-	height: 100%;
-	margin: 0px auto;
-	position: relative;
+	background: #507299;
+
+	font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
 }
 
-#ring {
-	display: none;
-	position: absolute;
-	top: 50%;
-}
 
 #menu {
 	width: 100%;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 3;
+	height: auto;
 }
+
 #menu table {
-	margin: 10px auto 0px auto;
+	margin: 0px auto;
 }
 
 #menu table td {
-	padding: 0px 5px;
+	padding: 10px 5px;
+}
+
+#menu table td:hover {
+	background: #446182;
 }
 
 #menu a {
 	text-decoration: none;
-	font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif;
-
-	color: #337ab7;
-	font-size: 18px;
+	color: #fff;
+	font-size: 17px;
 }
 
-#h1_title {
-	text-align: center;
-	color: #55598a;
-	font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+
+
+#center {
+	height: 500px;
+	width: 100%;
+	margin: 0px;
+	background: #edeef0;
+
+	display: flex;
+	align-items: center; /*вертикаль*/
+	justify-content: center; /*горизонталь*/
+}
+
+#ring {
+	background: white;
+	border: 1px solid #e7e8ec;
+	border-radius: 4px;
 }
 
 .img_wrapper {
@@ -48,14 +55,27 @@ html, body {
 	width: 430px;
 	cursor: pointer;
 	overflow: hidden;
+	border: 1px solid /*white*/ #e7e8ec;
+	border-radius: 2px;
 }
+
 #ring img {
 	width: 430px;
 	height: auto;
 }
 
-.candidate_name {
+.player_name {
 	text-align: center;
-	font-family: Verdana;
-	color: #858585;
+}
+
+.player_name a{
+	color: #2a5885;
+	font-size: 17px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.player_name:hover {
+	text-decoration: underline;
+	cursor: pointer;
 }

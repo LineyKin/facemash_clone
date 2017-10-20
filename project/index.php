@@ -33,18 +33,16 @@ $r_player = new PlayerWithEloRating($pair["right"]);
 </head>
 <body>
 
+<div id="menu">
+    <table>
+        <tr>
+            <td><a href="../list/?code=<?php echo $projectCode?>">К рейтингам</a></td>
+            <td><a href="../../dvastula/">На главную</a></td>
+        </tr>
+    </table>
+</div>
 
 <div id="center">
-
-    <div id="menu">
-        <!--<h2 id="h1_title"><?php /*echo $project->name*/?></h2>-->
-        <table>
-            <tr>
-                <td><a href="../list/?code=<?php echo $projectCode?>">К рейтингам</a></td>
-                <td><a href="../../dvastula/">На главную</a></td>
-            </tr>
-        </table>
-    </div>
 
     <table id="ring">
         <tr>
@@ -71,10 +69,19 @@ $r_player = new PlayerWithEloRating($pair["right"]);
             </td>
         </tr>
         <tr>
-            <td class="candidate_name" id="l_name"><?php echo $l_player->name?></td>
-            <td class="candidate_name" id="r_name"><?php echo $r_player->name?></td>
+            <td class="player_name" id="l_name">
+                <a>
+                    <?php echo $l_player->name?>
+                </a>
+            </td>
+            <td class="player_name" id="r_name">
+                <a>
+                    <?php echo $r_player->name?>
+                </a>
+            </td>
         </tr>
     </table>
+
 </div>
 
 <script type="text/javascript" src="../js/index.js"></script>
