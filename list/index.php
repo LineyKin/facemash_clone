@@ -21,8 +21,8 @@ $list = $project->getPlayersOrderByRating();
 <head>
     <meta charset='utf-8'>
     <title>List</title>
-    <link rel="stylesheet" href="../style/list.css">
-
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="../js/lib/jquery.min.js"></script>
 </head>
 <body>
 
@@ -35,7 +35,7 @@ $list = $project->getPlayersOrderByRating();
     </table>
 </div>
 
-<div id="list" >
+<div id="list" data-project="<?php echo $projectCode; ?>">
         <?php
         $count = 0;
         foreach ($list as $playerKey => $info) {
@@ -51,7 +51,7 @@ $list = $project->getPlayersOrderByRating();
             $count++;
             ?>
 
-            <table data-id="<?php echo $player->id; ?>">
+            <table>
                 <tr>
                     <td class="number_cell" rowspan="2">
                         <span><?php echo $count; ?></span>
@@ -66,14 +66,19 @@ $list = $project->getPlayersOrderByRating();
                 </tr>
                 <tr>
                     <td><span>Рейтинг <?php echo $player->rating?></span></td>
-                    <td><span><span class="plus">+ <?echo $player->wins?></span>  <span class="minus">- <?echo $player->fails?></span> </span></td>
+                    <td>
+                        <span>
+                            <span class="plus">+ <?echo $player->wins?></span>
+                            <span class="minus">- <?echo $player->fails?></span>
+                        </span>
+                    </td>
                 </tr>
             </table>
 
         <?php } ?>
 </div>
 
-
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
 
