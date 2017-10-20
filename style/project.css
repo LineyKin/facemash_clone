@@ -27,7 +27,7 @@ html, body {
 #menu a {
 	text-decoration: none;
 	color: #fff;
-	font-size: 17px;
+	font-size: 15px;
 }
 
 
@@ -55,7 +55,7 @@ html, body {
 	width: 430px;
 	cursor: pointer;
 	overflow: hidden;
-	border: 1px solid /*white*/ #e7e8ec;
+	border: 1px solid #e7e8ec;
 	border-radius: 2px;
 }
 
@@ -70,7 +70,7 @@ html, body {
 
 .player_name a{
 	color: #2a5885;
-	font-size: 17px;
+	font-size: 15px;
 	font-weight: 500;
 	text-decoration: none;
 }

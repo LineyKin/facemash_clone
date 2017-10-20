@@ -1,45 +1,53 @@
 html, body {
+    height: 100%;
     margin: 0px;
-    padding: 0px;
+    background: #edeef0;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
 }
 
-#h1_title {
-    text-align: center;
-    color: #55598a;
+
+#menu {
+    width: 100%;
+    height: auto;
+    background: #507299;
 }
+
+#menu table {
+    margin: 0px auto;
+}
+
+#menu table td {
+    padding: 10px 5px;
+}
+
+#menu table td:hover {
+    background: #446182;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}
+
 
 
 #list {
-    height: 500px;
-    overflow-y: scroll;
-    overflow-x: hidden;
     margin: 0px auto;
-    width: 430px;
-    border:  1px solid #eee;
+    width: 550px;
+    border: 1px solid #e7e8ec;
     padding-top: 20px;
-}
-
-#menu {
-    margin: 0px auto 10px auto;
-
-}
-
-#menu td {
-    padding: 0px 5px;
+    background: white;
 }
 
 
-
-#list::-webkit-scrollbar
-{
-    width: 0px;
-
-}
 
 .img_wrapper {
     height: 90px;
     width: 90px;
     overflow: hidden;
+    border: 1px solid #e7e8ec;
+    border-radius: 2px;
 }
 
 img {
@@ -47,9 +55,12 @@ img {
     width: 90px;
 }
 
-table {
-    color: #858585;
-    margin-bottom: 20px;
+#list table {
+    color: #656565;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid #e7e8ec;
+    width: 100%;
 }
 
 .number_cell {
@@ -57,14 +68,21 @@ table {
 }
 
 .name_cell {
-    width: 160px !important;
+    width: 180px !important;
+    color: #2a5885;
 }
 
 td span {
-    /*
     padding: 5px;
-    */
+    font-size: 13px;
+}
 
-    padding: 5px;
-    font-size: 15px;
+.plus {
+    padding: 0px;
+    color: #509953;
+}
+
+.minus {
+    padding: 0px;
+    color: #995050;
 }
