@@ -16,10 +16,8 @@ if (!$pair) {
     die("in developing...");
 }
 
-$l_player = new PlayerWithEloRating($pair["left"]);
-$r_player = new PlayerWithEloRating($pair["right"]);
-
-
+$l_player = new Player($pair["left"]);
+$r_player = new Player($pair["right"]);
 
 ?>
 
@@ -70,12 +68,12 @@ $r_player = new PlayerWithEloRating($pair["right"]);
         </tr>
         <tr>
             <td class="player_name" id="l_name">
-                <a>
+                <a href="../player/?code=<?php echo $l_player->id; ?>">
                     <?php echo $l_player->name?>
                 </a>
             </td>
             <td class="player_name" id="r_name">
-                <a>
+                <a href="../player/?code=<?php echo $r_player->id; ?>">
                     <?php echo $r_player->name?>
                 </a>
             </td>

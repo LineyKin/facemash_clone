@@ -67,9 +67,14 @@ img {
     width: 25px !important;
 }
 
-.name_cell {
+.name_cell a {
     width: 180px !important;
     color: #2a5885;
+    text-decoration: none;
+}
+
+.name_cell a:hover {
+    text-decoration: underline;
 }
 
 td span {

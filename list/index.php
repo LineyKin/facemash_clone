@@ -39,8 +39,9 @@ $list = $project->getPlayersOrderByRating();
         <?php
         $count = 0;
         foreach ($list as $playerKey => $info) {
-            $player = new PlayerWithEloRating(
-                $info['id'],
+            $id = $info['id'];
+            $player = new Player(
+                $id,
                 $info['project'],
                 $info['code'],
                 $info['name'],
@@ -58,10 +59,18 @@ $list = $project->getPlayersOrderByRating();
                     </td>
                     <td rowspan="2">
                         <div class="img_wrapper">
-                            <img src=<?php echo $player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?> >
+                            <a href="../player/?code=<?php echo $id; ?>">
+                                <img src=<?php echo $player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?> >
+                            </a>
                         </div>
                     </td>
-                    <td class="name_cell"><span><?php echo $player->name?></span></td>
+                    <td class="name_cell">
+                        <span>
+                            <a href="../player/?code=<?php echo $id; ?>">
+                                <?php echo $player->name?>
+                            </a>
+                        </span>
+                    </td>
                     <td><span>Доля побед: <?echo $player->getShareOfWins(); ?></span></td>
                 </tr>
                 <tr>
