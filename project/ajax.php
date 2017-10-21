@@ -20,6 +20,9 @@ $newLooserRating = $looser->calculateNewRating(0, $winnerRating);
 $winner->updateRatingInDB($newWinnerRating);
 $looser->updateRatingInDB($newLooserRating);
 
+Logger::insertRatingAfterGame($winner->id, $newWinnerRating);
+Logger::insertRatingAfterGame($looser->id, $newLooserRating);
+
 $project = new Project($projectCode);
 $new_pair = $project->getRandomPairOfPlayers();
 

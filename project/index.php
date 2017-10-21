@@ -8,7 +8,6 @@ $project = new Project($projectCode);
 
 $pair = $project->getRandomPairOfPlayers();
 
-
 if (!$pair) {
     die("in developing...");
 }

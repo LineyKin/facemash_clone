@@ -73,7 +73,7 @@ $list = $project->getPlayersOrderByRating();
                     <td><span>Доля побед: <?echo $player->getShareOfWins(); ?></span></td>
                 </tr>
                 <tr>
-                    <td><span>Рейтинг <?php echo $player->rating?></span></td>
+                    <td><span>Рейтинг: <?php echo $player->rating?></span></td>
                     <td>
                         <span>
                             <span class="plus">+ <?echo $player->wins?></span>

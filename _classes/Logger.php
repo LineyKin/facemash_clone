@@ -8,4 +8,9 @@ class Logger {
         \DB::makeAQuery($query);
     }
 
+    static function insertRatingAfterGame($playerID, $rating) {
+        $query = "INSERT INTO rating_logs (player_id, rating) VALUES ('$playerID', '$rating');";
+        \DB::makeAQuery($query);
+    }
+
 }
