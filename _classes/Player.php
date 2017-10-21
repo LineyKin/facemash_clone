@@ -54,6 +54,22 @@ class Player {
         return $r;
     }
 
+    public function getRatingDynamics() {
+
+        $query = "SELECT rating, time FROM rating_logs WHERE player_id=$this->id";
+        $result = \DB::makeAQuery($query);
+        $num_rows = mysqli_num_rows($result);
+
+        $arPlayerIDs = [];
+
+        for ($i = 0; $i < $num_rows; $i++ ) {
+            $array = mysqli_fetch_array($result);
+            array_push($arPlayerIDs, ['rating' => $array['rating'], 'time' => $array['time']]);
+        }
+
+        return $arPlayerIDs;
+    }
+
 
 
 
