@@ -15,12 +15,28 @@ $player = new Player($playerID);
       <meta charset = 'utf-8'>
       <title><?php echo $player->name; ?></title>
       <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="../_styles/nav.css">
 
       <script type="text/javascript" src="../_js/jquery.min.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
-    <div data-player_code="<?php echo $playerID; ?>" id="rating_graph" style="width: 900px; height: 500px"></div>
+
+  <div id="menu">
+      <table>
+          <tr>
+              <td><a href="../project/?code=<?php echo $player->project?>">К выборам</a></td>
+              <td><a href="../list/?code=<?php echo $player->project?>">К рейтингам</a></td>
+              <td><a href="../../dvastula/">На главную</a></td>
+          </tr>
+      </table>
+  </div>
+
+  <div class="img_wrapper">
+      <img src=<?php echo $player->getImgSrc('../'.IMG_DIR)?> >
+  </div>
+
+    <div data-player_code="<?php echo $playerID; ?>" id="rating_graph"></div>
   </body>
 </html>

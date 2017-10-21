@@ -10,7 +10,7 @@ class Player {
         if($code == NULL) {
 
             global $db_server;
-            $query = "SELECT name, code, rating, wins, fails FROM players WHERE id = '$id'";
+            $query = "SELECT * FROM players WHERE id = '$id'";
             mysqli_query($db_server, "SET NAMES 'utf8'");
             $player_info = fromMysqlToArray($query);
 
@@ -19,6 +19,7 @@ class Player {
             $this->wins = $player_info["wins"];
             $this->fails = $player_info["fails"];
             $this->code = $player_info["code"];
+            $this->project = $player_info["project"];
         }
         else {
             $this->name = $name;
@@ -26,11 +27,12 @@ class Player {
             $this->wins = $wins;
             $this->fails = $fails;
             $this->code = $code;
+            $this->project = $project;
         }
     }
 
     public function getImgSrc($img_dir) {
-        return $img_dir.$this->code.".jpg";
+        return $img_dir.$this->project."/".$this->code.".jpg";
     }
 
     public function getShareOfWins() {
@@ -60,14 +62,14 @@ class Player {
         $result = \DB::makeAQuery($query);
         $num_rows = mysqli_num_rows($result);
 
-        $arPlayerIDs = [];
+        $arRatingDynamics = [];
 
         for ($i = 0; $i < $num_rows; $i++ ) {
             $array = mysqli_fetch_array($result);
-            array_push($arPlayerIDs, ['rating' => $array['rating'], 'time' => $array['time']]);
+            array_push($arRatingDynamics, ['rating' => $array['rating'], 'time' => $array['time']]);
         }
 
-        return $arPlayerIDs;
+        return $arRatingDynamics;
     }
 
 

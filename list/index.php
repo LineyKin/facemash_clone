@@ -21,6 +21,8 @@ $list = $project->getPlayersOrderByRating();
     <meta charset='utf-8'>
     <title>List</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../_styles/nav.css">
+
     <script type="text/javascript" src="../_js/jquery.min.js"></script>
 </head>
 <body>
@@ -46,6 +48,7 @@ $list = $project->getPlayersOrderByRating();
                 $info['name'],
                 $info['rating'],
                 $info['wins'],
+                $info['fails'],
                 $info['fails']
             );
             $count++;
@@ -59,7 +62,7 @@ $list = $project->getPlayersOrderByRating();
                     <td rowspan="2">
                         <div class="img_wrapper">
                             <a href="../player/?code=<?php echo $id; ?>">
-                                <img src=<?php echo $player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?> >
+                                <img src=<?php echo $player->getImgSrc('../'.IMG_DIR)?> >
                             </a>
                         </div>
                     </td>

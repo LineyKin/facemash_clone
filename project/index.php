@@ -23,6 +23,7 @@ $r_player = new Player($pair["right"]);
     <meta charset = 'utf-8'>
     <title><?php echo $project->name; ?></title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../_styles/nav.css">
     <script type="text/javascript" src="../_js/jquery.min.js"></script>
 </head>
 <body>
@@ -46,7 +47,7 @@ $r_player = new Player($pair["right"]);
                             id="l_img"
                             rating=<?php echo $l_player->rating?>
                             playerID=<?php echo $l_player->id?>
-                            src=<?php echo $l_player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?>
+                            src=<?php echo $l_player->getImgSrc('../'.IMG_DIR)?>
                     >
                 </div>
             </td>
@@ -56,7 +57,7 @@ $r_player = new Player($pair["right"]);
                             id="r_img"
                             rating=<?php echo $r_player->rating?>
                             playerID=<?php echo $r_player->id?>
-                            src=<?php echo $r_player->getImgSrc('../'.IMG_DIR.$projectCode.'/')?>
+                            src=<?php echo $r_player->getImgSrc('../'.IMG_DIR)?>
 
                     >
                 </div>
