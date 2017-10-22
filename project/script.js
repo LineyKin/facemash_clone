@@ -3,6 +3,8 @@ var loc = window.location;
 var arLoc = loc.search.split('=');
 var projectCode = arLoc[1];
 
+var ring = $("#ring");
+
 
 $("#ring img").on("click", function() {
 
@@ -10,8 +12,10 @@ $("#ring img").on("click", function() {
     var r_img = $("#r_img");
     var l_img = $("#l_img");
     var looser_id = this.id == "l_img" ? r_img.attr("playerID") : l_img.attr("playerID");
+    var l_name = $("#l_name a");
+    var r_name = $("#r_name a");
 
-    $("#ring").hide();
+    ring.hide();
     $.ajax({
         type: "POST",
         url: "ajax.php",
@@ -22,17 +26,22 @@ $("#ring img").on("click", function() {
         },
         success: function(data) {
             var new_pair = JSON.parse(data);
+            var l_src = new_pair.left;
+            var r_src = new_pair.right;
 
-            l_img.attr("src", new_pair.left.src_img);
-            r_img.attr("src", new_pair.right.src_img);
+            l_img.attr("src", l_src.src_img);
+            r_img.attr("src", r_src.src_img);
 
-            l_img.attr("playerID", new_pair.left.id);
-            r_img.attr("playerID", new_pair.right.id);
+            l_img.attr("playerID", l_src.id);
+            r_img.attr("playerID", r_src.id);
 
-            $("#l_name a").html(new_pair.left.name);
-            $("#r_name a").html(new_pair.right.name);
+            l_name.html(l_src.name);
+            r_name.html(r_src.name);
 
-            $("#ring").fadeIn(500);
+            l_name.attr("href", "../player/?code="+l_src.id);
+            r_name.attr("href", "../player/?code="+r_src.id);
+
+            ring.fadeIn(500);
         }
     })
 });

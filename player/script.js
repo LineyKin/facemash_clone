@@ -1,8 +1,6 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
-var player_name = $("title").html();
-
 function drawChart() {
 
     var player_id = $("#rating_graph").data("player_code");
@@ -15,8 +13,8 @@ function drawChart() {
             player_id: player_id
         },
         success: function (ratingDynamicsJSON) {
-            var ratingDynamics = JSON.parse(ratingDynamicsJSON);
 
+            var ratingDynamics = JSON.parse(ratingDynamicsJSON);
 
             var graph_array = [
                 ['Time', 'Rating']
@@ -33,18 +31,23 @@ function drawChart() {
                 graph_array.push(arStep);
             }
 
+            if (graph_array.length > 2) {
+                var data = google.visualization.arrayToDataTable(graph_array);
 
-            var data = google.visualization.arrayToDataTable(graph_array);
+                var options = {
+                    title: 'Динамика рейтинга игрока',
+                    curveType: 'function',
+                    legend: { position: 'none' }
+                };
 
-            var options = {
-                title: 'Динамика рейтинга игрока '+player_name,
-                curveType: 'function',
-                legend: { position: 'none' }
-            };
+                var chart = new google.visualization.LineChart(document.getElementById('rating_graph'));
 
-            var chart = new google.visualization.LineChart(document.getElementById('rating_graph'));
+                chart.draw(data, options);
+            }
+            else {
+                $("#rating_graph").hide();
+            }
 
-            chart.draw(data, options);
         }
     });
 

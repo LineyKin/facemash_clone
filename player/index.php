@@ -19,7 +19,7 @@ $player = new Player($playerID);
 
       <script type="text/javascript" src="../_js/jquery.min.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script type="text/javascript" src="script.js"></script>
+
   </head>
   <body>
 
@@ -39,4 +39,5 @@ $player = new Player($playerID);
 
     <div data-player_code="<?php echo $playerID; ?>" id="rating_graph"></div>
   </body>
+  <script type="text/javascript" src="script.js"></script>
 </html>
