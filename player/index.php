@@ -75,6 +75,10 @@ $project = new Project($player->project);
       </div>
 
       <div class="block">
+
+      </div>
+
+      <div class="block">
           <div data-player_code="<?php echo $playerID; ?>" id="rating_graph" class="graph"></div>
       </div>
 

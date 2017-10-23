@@ -42,27 +42,27 @@ function drawChart() {
             }
 
             if (rating_array.length > 2) {
-                var rating_data = google.visualization.arrayToDataTable(rating_array);
-                var winner_index_data = google.visualization.arrayToDataTable(winner_index_array);
 
+                var rating_data = google.visualization.arrayToDataTable(rating_array);
                 var rating_options = {
                     title: 'Динамика рейтинга',
                     curveType: 'function',
                     legend: { position: 'none' }
                 };
+                var rating_chart = new google.visualization.LineChart(document.getElementById('rating_graph'));
+                rating_chart.draw(rating_data, rating_options);
 
+
+
+                var winner_index_data = google.visualization.arrayToDataTable(winner_index_array);
                 var winner_index_options = {
                     title: 'Динамика индекса победителя (%)',
                     curveType: 'function',
                     legend: { position: 'none' }
                 }
-
-                var rating_chart = new google.visualization.LineChart(document.getElementById('rating_graph'));
-                rating_chart.draw(rating_data, rating_options);
-
-
                 var winner_index_chart = new google.visualization.LineChart(document.getElementById('winner_index_graph'));
                 winner_index_chart.draw(winner_index_data, winner_index_options);
+
             }
             else {
                 $("#rating_graph").closest('.block').hide();
