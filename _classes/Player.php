@@ -39,23 +39,23 @@ class Player {
     public function getShareOfWins() {
         $w = (int) $this->wins;
         $f = (int) $this->fails;
-        $all = $w + $f;
 
-        if ($all > 0) {
+        if($w == 0 && $f == 0) {
+            return false;
+        }
+        else {
+            $all = $w + $f;
             $r = $w/$all;
             $r = $r*100;
             $r = round($r, 2);
             return $r;
-        }
-        else {
-            return false;
         }
 
     }
 
     public function showShareOfWins() {
         $shareOfWins = $this->getShareOfWins();
-        return $shareOfWins >= 0  ? $shareOfWins."%" : "-";
+        return $shareOfWins ? $shareOfWins."%" : "-";
     }
 
     public function getDynamicsOfPersonalProps() {
