@@ -17,11 +17,16 @@ $looserRating = $looser->rating;
 $newWinnerRating = $winner->calculateNewRating(1, $looserRating);
 $newLooserRating = $looser->calculateNewRating(0, $winnerRating);
 
+$winner->wins++;
+$looser->fails++;
+
 $winner->updateRatingInDB($newWinnerRating);
 $looser->updateRatingInDB($newLooserRating);
 
 Logger::insertPersonalPlayerLogsIntoDB($winner->id, $newWinnerRating, $winner->getShareOfWins());
 Logger::insertPersonalPlayerLogsIntoDB($looser->id, $newLooserRating, $looser->getShareOfWins());
+
+
 
 $project = new Project($projectCode);
 $new_pair = $project->getRandomPairOfPlayers();

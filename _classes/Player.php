@@ -3,7 +3,7 @@
 class Player {
 
     public $id, $project, $code, $name, $rating, $wins, $fails;
-    protected $gameResult;
+    protected $gameResult = NULL;
 
     function __construct($id, $project=NULL, $code=NULL, $name=NULL, $rating=NULL, $wins=NULL, $fails=NULL) {
         $this->id = $id;
@@ -58,9 +58,9 @@ class Player {
         return $shareOfWins ? $shareOfWins."%" : "-";
     }
 
-    public function getRatingDynamics() {
+    public function getDynamicsOfPersonalProps() {
 
-        $query = "SELECT rating, time FROM personal_player_logs WHERE player_id=$this->id";
+        $query = "SELECT rating, winner_index, time FROM personal_player_logs WHERE player_id=$this->id";
         $result = \DB::makeAQuery($query);
         $num_rows = mysqli_num_rows($result);
 
@@ -68,7 +68,11 @@ class Player {
 
         for ($i = 0; $i < $num_rows; $i++ ) {
             $array = mysqli_fetch_array($result);
-            array_push($arRatingDynamics, ['rating' => $array['rating'], 'time' => $array['time']]);
+            array_push($arRatingDynamics, [
+                'rating' => $array['rating'],
+                'winner_index' => $array['winner_index'],
+                'time' => $array['time']
+            ]);
         }
 
         return $arRatingDynamics;
@@ -107,16 +111,10 @@ class Player {
     public function updateRatingInDB($newRating) {
 
         if ($this->gameResult == 1) {
-
-            $all_wins = $this->wins + 1;
-            $query = "UPDATE players SET rating = $newRating, wins = $all_wins WHERE id = $this->id";
-
+            $query = "UPDATE players SET rating = $newRating, wins = $this->wins WHERE id = $this->id";
         }
         else {
-
-            $all_fails = $this->fails + 1;
-            $query = "UPDATE players SET rating = $newRating, fails = $all_fails WHERE id = $this->id";
-
+            $query = "UPDATE players SET rating = $newRating, fails = $this->fails WHERE id = $this->id";
         }
 
         \DB::makeAQuery($query);

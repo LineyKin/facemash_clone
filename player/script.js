@@ -12,40 +12,61 @@ function drawChart() {
             rating_graph: true,
             player_id: player_id
         },
-        success: function (ratingDynamicsJSON) {
+        success: function (dynamicsJSON) {
 
-            var ratingDynamics = JSON.parse(ratingDynamicsJSON);
+            var dynamics = JSON.parse(dynamicsJSON);
 
-            var graph_array = [
-                ['Time', 'Rating']
+            console.log(dynamics);
+
+            var rating_array = [
+                ['Time', 'Рейтинг']
             ];
 
-            for (var key in ratingDynamics) {
+            var winner_index_array = [
+                ['Time', 'Индекс победителя']
+            ];
 
-                var arStep = [];
-                var step = ratingDynamics[key];
+            for (var key in dynamics) {
 
-                arStep[0] = step.time;
-                arStep[1] = Number(step.rating);
+                var step = dynamics[key];
 
-                graph_array.push(arStep);
+                var rating_step = [];
+                rating_step[0] = step.time;
+                rating_step[1] = Number(step.rating);
+                rating_array.push(rating_step);
+
+                var winner_index_step = [];
+                winner_index_step[0] = step.time;
+                winner_index_step[1] = Number(step.winner_index);
+                winner_index_array.push(winner_index_step);
             }
 
-            if (graph_array.length > 2) {
-                var data = google.visualization.arrayToDataTable(graph_array);
+            if (rating_array.length > 2) {
+                var rating_data = google.visualization.arrayToDataTable(rating_array);
+                var winner_index_data = google.visualization.arrayToDataTable(winner_index_array);
 
-                var options = {
-                    title: 'Динамика рейтинга игрока',
+                var rating_options = {
+                    title: 'Динамика рейтинга',
                     curveType: 'function',
                     legend: { position: 'none' }
                 };
 
-                var chart = new google.visualization.LineChart(document.getElementById('rating_graph'));
+                var winner_index_options = {
+                    title: 'Динамика индекса победителя (%)',
+                    curveType: 'function',
+                    legend: { position: 'none' }
+                }
 
-                chart.draw(data, options);
+                var rating_chart = new google.visualization.LineChart(document.getElementById('rating_graph'));
+                rating_chart.draw(rating_data, rating_options);
+
+
+                var winner_index_chart = new google.visualization.LineChart(document.getElementById('winner_index_graph'));
+                winner_index_chart.draw(winner_index_data, winner_index_options);
             }
             else {
-                $("#rating_graph").hide();
+                $("#rating_graph").closest('.block').hide();
+                $("#winner_index_graph").closest('.block').hide();
             }
 
         }

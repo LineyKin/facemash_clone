@@ -7,18 +7,14 @@ html, body {
 
 
 #contetnt {
-    padding: 5px;
-    background: white;
     width: 700px;
-    height: 100%;
-    margin: 0px auto;
+    margin: 10px auto 0px auto;
 }
 
 
-#rating_graph {
+.graph {
     width: 100%;
     height: 300px;
-    border: 1px solid #e7e8ec;
     margin-top: 5px;
 }
 
@@ -60,6 +56,9 @@ html, body {
 .block {
     width: 100%;
     float: left;
+    background: white;
+    margin-top: 5px;
+    border: 1px solid #e7e8ec;
 }
 
 
