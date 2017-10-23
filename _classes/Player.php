@@ -49,13 +49,13 @@ class Player {
         $r = $r*100;
         $r = round($r, 2);
 
-        return $r;
+        return (int) $r;
 
     }
 
     public function showShareOfWins() {
         $shareOfWins = $this->getShareOfWins();
-        return !$shareOfWins ? "-" : $shareOfWins."%";
+        return is_int($shareOfWins) ? $shareOfWins."%" : "-";
     }
 
     public function getDynamicsOfPersonalProps() {
