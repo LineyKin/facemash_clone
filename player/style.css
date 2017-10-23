@@ -1,13 +1,25 @@
 html, body {
     height: 100%;
     background: #edeef0;
+    margin: 0px;
     font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
 }
 
+
+#contetnt {
+    padding: 5px;
+    background: white;
+    width: 700px;
+    height: 100%;
+    margin: 0px auto;
+}
+
+
 #rating_graph {
     width: 100%;
-    height: 400px;
+    height: 300px;
     border: 1px solid #e7e8ec;
+    margin-top: 5px;
 }
 
 
@@ -17,10 +29,60 @@ html, body {
     overflow: hidden;
     border: 1px solid #e7e8ec;
     border-radius: 2px;
+    float: left;
 }
+
+.info_wrapper {
+    float: left;
+    padding-left: 10px;
+    width: 430px;
+}
+
+
+.info_wrapper table {
+    margin-top: 10px;
+    width: 300px;
+    font-size: 13px;
+}
+
+.info_wrapper table tr td {
+    padding-top: 5px;
+}
+
+.info_wrapper table tr td:first-of-type {
+    color: #828282;
+}
+
+.info_wrapper table tr td:last-of-type {
+    color: #2a5885;
+}
+
+.block {
+    width: 100%;
+    float: left;
+}
+
+
 
 img {
     height: auto;
     width: 250px;
+}
+
+.page_name
+{
+    font-size: 19px;
+    line-height: 25px;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    margin: -1px 0 -1px -1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 1px;
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid #e7e8ec;
+
 }
 

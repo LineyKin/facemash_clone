@@ -2,7 +2,8 @@
 
 class Player {
 
-    public $id, $name, $rating;
+    public $id, $project, $code, $name, $rating, $wins, $fails;
+    protected $gameResult;
 
     function __construct($id, $project=NULL, $code=NULL, $name=NULL, $rating=NULL, $wins=NULL, $fails=NULL) {
         $this->id = $id;
@@ -38,27 +39,28 @@ class Player {
     public function getShareOfWins() {
         $w = (int) $this->wins;
         $f = (int) $this->fails;
-
         $all = $w + $f;
-
-        $r = NULL;
 
         if ($all > 0) {
             $r = $w/$all;
             $r = $r*100;
             $r = round($r, 2);
-            $r = $r."%";
+            return $r;
         }
         else {
-            $r = "-";
+            return false;
         }
 
-        return $r;
+    }
+
+    public function showShareOfWins() {
+        $shareOfWins = $this->getShareOfWins();
+        return $shareOfWins ? $shareOfWins."%" : "-";
     }
 
     public function getRatingDynamics() {
 
-        $query = "SELECT rating, time FROM rating_logs WHERE player_id=$this->id";
+        $query = "SELECT rating, time FROM personal_player_logs WHERE player_id=$this->id";
         $result = \DB::makeAQuery($query);
         $num_rows = mysqli_num_rows($result);
 
@@ -96,6 +98,7 @@ class Player {
         $K = $R < 2400 ? 20 : 10;
 
         $newRating = $R + $K * ($gameResult - $E);
+        $newRating = round($newRating, 2);
 
         return $newRating;
 
