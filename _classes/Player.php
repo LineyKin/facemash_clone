@@ -55,7 +55,7 @@ class Player {
 
     public function showShareOfWins() {
         $shareOfWins = $this->getShareOfWins();
-        return $shareOfWins ? $shareOfWins."%" : "-";
+        return $shareOfWins >= 0  ? $shareOfWins."%" : "-";
     }
 
     public function getDynamicsOfPersonalProps() {
