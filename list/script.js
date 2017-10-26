@@ -15,3 +15,25 @@ function  getList() {
 }
 
 //setInterval(getList, 10000);
+
+
+
+$("#filter input").on("input", function () {
+    var str = $(this).val();
+
+    var reg = new RegExp(str, "ig");
+
+    $(".name_cell a").each(function () {
+
+        var name = $(this).html();
+
+        if (!reg.test(name)) {
+           $(this).closest("table").hide()
+        }
+        else {
+            $(this).closest("table").show()
+        }
+
+    });
+
+})

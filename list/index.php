@@ -27,6 +27,8 @@ $list = $project->getPlayersOrderByRating();
 </head>
 <body>
 
+
+
 <div id="menu">
     <table>
         <tr>
@@ -37,6 +39,10 @@ $list = $project->getPlayersOrderByRating();
 </div>
 
 <div id="list" data-project="<?php echo $projectCode; ?>">
+
+    <div id="filter">
+        <input type="text" placeholder="поиск">
+    </div>
         <?php
         $count = 0;
         foreach ($list as $playerKey => $info) {
@@ -68,9 +74,7 @@ $list = $project->getPlayersOrderByRating();
                     </td>
                     <td class="name_cell">
                         <span>
-                            <a href="../player/?code=<?php echo $id; ?>">
-                                <?php echo $player->name?>
-                            </a>
+                            <a href="../player/?code=<?php echo $id; ?>"><?php echo $player->name?></a>
                         </span>
                     </td>
                     <td><span>Доля побед: <?echo $player->showShareOfWins(); ?></span></td>

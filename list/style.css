@@ -7,7 +7,17 @@ html, body {
 
 
 
+#filter {
+    text-align: left;
+    margin-left: 32px;
+}
 
+#filter input {
+    padding: 5px;
+    border: 0px;
+    border-bottom: 1px solid #e7e8ec;
+    outline: none;
+}
 
 
 #list {
