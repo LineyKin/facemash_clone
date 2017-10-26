@@ -28,9 +28,9 @@ $project = new Project($player->project);
   <div id="menu">
       <table>
           <tr>
+              <td><a href="../../dvastula/">На главную</a></td>
               <td><a href="../project/?code=<?php echo $player->project?>">К выборам</a></td>
               <td><a href="../list/?code=<?php echo $player->project?>">К рейтингам</a></td>
-              <td><a href="../../dvastula/">На главную</a></td>
           </tr>
       </table>
   </div>

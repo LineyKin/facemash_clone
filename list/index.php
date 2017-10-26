@@ -30,8 +30,8 @@ $list = $project->getPlayersOrderByRating();
 <div id="menu">
     <table>
         <tr>
-            <td><a href="../project/?code=<?php echo $projectCode?>">К выборам</a></td>
             <td><a href="../../dvastula/">На главную</a></td>
+            <td><a href="../project/?code=<?php echo $projectCode?>">К выборам</a></td>
         </tr>
     </table>
 </div>

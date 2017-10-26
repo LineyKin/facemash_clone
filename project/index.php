@@ -31,8 +31,8 @@ $r_player = new Player($pair["right"]);
 <div id="menu">
     <table>
         <tr>
-            <td><a href="../list/?code=<?php echo $projectCode?>">К рейтингам</a></td>
             <td><a href="../../dvastula/">На главную</a></td>
+            <td><a href="../list/?code=<?php echo $projectCode?>">К рейтингам</a></td>
         </tr>
     </table>
 </div>

@@ -57,7 +57,7 @@ function drawChart() {
                     title: 'Динамика индекса победителя (%)',
                     curveType: 'function',
                     legend: { position: 'none' }
-                }
+                };
                 var winner_index_chart = new google.visualization.LineChart(document.getElementById('winner_index_graph'));
                 winner_index_chart.draw(winner_index_data, winner_index_options);
 
