@@ -16,10 +16,8 @@ function drawChart() {
 
             var dynamics = JSON.parse(dynamicsJSON);
 
-            console.log(dynamics);
-
             var rating_array = [
-                ['Time', 'Рейтинг']
+                ['Time', 'Рейтинг'],
             ];
 
             var winner_index_array = [
