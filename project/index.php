@@ -47,7 +47,7 @@ $r_player = new Player($pair["right"]);
                             id="l_img"
                             rating=<?php echo $l_player->rating?>
                             playerID=<?php echo $l_player->id?>
-                            src=<?php echo $l_player->getImgSrc('../'.IMG_DIR)?>
+                            src=<?php echo $l_player->imgSrc; ?>
                     >
                 </div>
             </td>
@@ -57,7 +57,7 @@ $r_player = new Player($pair["right"]);
                             id="r_img"
                             rating=<?php echo $r_player->rating?>
                             playerID=<?php echo $r_player->id?>
-                            src=<?php echo $r_player->getImgSrc('../'.IMG_DIR)?>
+                            src=<?php echo $r_player->imgSrc; ?>
 
                     >
                 </div>

@@ -3,7 +3,8 @@
 
 class Project {
 
-    public $code, $name, $active;
+    public $code, $name;
+    protected $active;
 
     function __construct($code) {
         $this->code = $code;
@@ -63,15 +64,17 @@ class Project {
     function getPlayersOrderByRating() {
         $query = "SELECT * FROM players WHERE project = '$this->code' ORDER BY rating DESC";
         $result = \DB::makeAQuery($query);
+        $arPlayers = \DB::getSimpleList($result);
 
-        $num_rows = mysqli_num_rows($result);
+        return $arPlayers;
+    }
 
-        $arPlayerIDs = [];
-        for ($i = 0; $i < $num_rows; $i++ ) {
-            array_push($arPlayerIDs, mysqli_fetch_array($result));
-        }
+    function getPlayersOrderByName() {
+        $query = "SELECT * FROM players WHERE project = '$this->code' ORDER BY name";
+        $result = \DB::makeAQuery($query);
+        $arPlayers = \DB::getSimpleList($result);
 
-        return $arPlayerIDs;
+        return $arPlayers;
     }
 
 }

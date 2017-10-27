@@ -40,7 +40,7 @@ $project = new Project($player->project);
       <div class="block">
 
           <div class="img_wrapper">
-              <img src=<?php echo $player->getImgSrc('../'.IMG_DIR)?> >
+              <img src=<?php echo $player->imgSrc; ?> >
           </div>
 
           <div class="info_wrapper">

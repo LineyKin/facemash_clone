@@ -68,7 +68,7 @@ $list = $project->getPlayersOrderByRating();
                     <td rowspan="2">
                         <div class="img_wrapper">
                             <a href="../player/?code=<?php echo $id; ?>">
-                                <img src=<?php echo $player->getImgSrc('../'.IMG_DIR)?> >
+                                <img src=<?php echo $player->imgSrc; ?> >
                             </a>
                         </div>
                     </td>

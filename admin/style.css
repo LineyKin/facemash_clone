@@ -1,0 +1,21 @@
+.block {
+    margin-left: 10px;
+}
+
+.img_wrapper {
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    border: 1px solid #e7e8ec;
+    border-radius: 2px;
+}
+
+img {
+    height: auto;
+    width: 50px;
+}
+
+#list_wrapper {
+    overflow-y: auto;
+    max-height: 500px;
+}

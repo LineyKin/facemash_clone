@@ -24,3 +24,31 @@ if ( isset($_FILES['playerPhoto']) && isset($_POST['name']) ) {
 
     \Admin::insertNewPlayerIntoProject($projectCode, $code, $name);
 }
+
+
+if(isset($_POST['get_list'])) {
+    $projectCode = $_POST['project_code'];
+    $project = new Project($projectCode);
+    $playerList = $project->getPlayersOrderByName();
+
+    echo json_encode($playerList);
+}
+
+if (isset($_POST['delete_player'])) {
+    $playerID = $_POST['player_id'];
+    $player = new Player($playerID);
+
+    $imgSrc = $player->imgSrc;
+    if (unlink($_SERVER['DOCUMENT_ROOT'].$imgSrc)) {
+        if($player->deletePlayerFromDB()) {
+            echo 1;
+        }
+        else {
+            echo 0;
+        }
+    }
+    else {
+        echo "фото не удалено";
+    }
+
+}

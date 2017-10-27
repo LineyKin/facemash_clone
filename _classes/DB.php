@@ -14,4 +14,15 @@ class DB {
         return mysqli_query($db_server, $query);
     }
 
+    static function getSimpleList($queryResult) {
+        $num_rows = mysqli_num_rows($queryResult);
+
+        $list = [];
+        for ($i = 0; $i < $num_rows; $i++ ) {
+            array_push($list, mysqli_fetch_array($queryResult));
+        }
+
+        return $list;
+    }
+
 }

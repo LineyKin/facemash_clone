@@ -30,11 +30,46 @@ class Player {
             $this->code = $code;
             $this->project = $project;
         }
+
+        $this->imgSrc = "/".GLOBAL_PROJECT_NAME.IMG_DIR.$this->project."/".$this->code.".jpg";
     }
 
-    public function getImgSrc($img_dir) {
-        return $img_dir.$this->project."/".$this->code.".jpg";
+
+    /* МЕТОДЫ УДАЛЕНИЯ */
+
+    public function deletePlayerFromPlayers() {
+        $query = "DELETE FROM players WHERE id=$this->id";
+        return \DB::makeAQuery($query);
     }
+
+    public function deletePlayerFromGamelogs() {
+        $id = $this->id;
+        $query = "DELETE FROM gamelogs WHERE winner_id=$id OR looser_id=$id";
+        return \DB::makeAQuery($query);
+    }
+
+    public function deletePlayerFromPPL() {
+        $query = "DELETE FROM personal_player_logs WHERE player_id=$this->id";
+        return \DB::makeAQuery($query);
+    }
+
+    public function deletePlayerFromDB() {
+        $status = [];
+        array_push($status, self::deletePlayerFromGamelogs());
+        array_push($status, self::deletePlayerFromPlayers());
+        array_push($status, self::deletePlayerFromPPL());
+
+        if (!in_array(false, $status)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    /* МЕТОДЫ УДАЛЕНИЯ */
+
 
     public function getShareOfWins() {
         $w = (int) $this->wins;
