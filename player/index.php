@@ -51,7 +51,11 @@ $project = new Project($player->project);
               <table>
                   <tr>
                       <td>Проект:</td>
-                      <td><?php echo $project->name;  ?></td>
+                      <td>
+                          <a href="../project/?code=<?php echo $player->project?>">
+                              <?php echo $project->name;  ?>
+                          </a>
+                      </td>
                   </tr>
                   <tr>
                       <td>Рейтинг:</td>

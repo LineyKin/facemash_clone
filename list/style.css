@@ -10,6 +10,7 @@ html, body {
 #filter {
     text-align: left;
     margin-left: 32px;
+    margin-bottom: 5px;
 }
 
 #filter input {

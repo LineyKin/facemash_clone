@@ -53,6 +53,15 @@ html, body {
     color: #2a5885;
 }
 
+.info_wrapper table tr td:last-of-type a {
+    text-decoration: none;
+    color: #2a5885;
+}
+
+.info_wrapper table tr td:last-of-type a:hover {
+    text-decoration: underline;
+}
+
 .block {
     width: 100%;
     float: left;
@@ -80,7 +89,7 @@ img {
     text-overflow: ellipsis;
     padding-left: 1px;
     padding-bottom: 5px;
-    padding-top: 5px;
+    padding-top: 5;
 
     border-bottom: 1px solid #e7e8ec;
 
