@@ -3,12 +3,18 @@ var loc = window.location;
 var arLoc = loc.search.split('=');
 var projectCode = arLoc[1];
 
+
 var ring = $("#ring");
 
 
 $("#ring img").on("click", function() {
-
     var winner_id = $(this).attr("playerID");
+
+    if (winner_id < 0) {
+        alert("playerid должен быть положительным числом");
+        return false;
+    }
+
     var r_img = $("#r_img");
     var l_img = $("#l_img");
     var looser_id = this.id == "l_img" ? r_img.attr("playerID") : l_img.attr("playerID");

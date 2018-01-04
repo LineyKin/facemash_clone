@@ -50,10 +50,10 @@ $projects = \Admin::getAllProjects();
             foreach ($projects as $number => $project) {
                 echo "<tr><td>";
                 if (!$project['active']) {
-                    echo "<a class='not_active_proj' title='Проект в разработке' href='project/?code=".$project['code']."' >".$project['proj_name']."</a>";
+                    echo "<a class='not_active_proj' title='Проект в разработке' href='project/?id=".$project['id']."' >".$project['proj_name']."</a>";
                 }
                 else {
-                    echo "<a href='project/?code=".$project['code']."' >".$project['proj_name']."</a>";
+                    echo "<a href='project/?id=".$project['id']."' >".$project['proj_name']."</a>";
                 }
                 echo "</td></tr>";
             }

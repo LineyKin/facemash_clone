@@ -3,13 +3,13 @@
 require_once "../connectivity.php";
 
 
-if (!$_GET['code']) {
+if (!$_GET['id']) {
     die("project is not defined");
 }
 
-$projectCode = $_GET['code'];
+$project_id = $_GET['id'];
 
-$project = new Project($projectCode);
+$project = new Project($project_id);
 
 $list = $project->getPlayersOrderByRating();
 
@@ -33,12 +33,12 @@ $list = $project->getPlayersOrderByRating();
     <table>
         <tr>
             <td><a href="../../dvastula/">На главную</a></td>
-            <td><a href="../project/?code=<?php echo $projectCode?>">К выборам</a></td>
+            <td><a href="../project/?id=<?php echo $project_id?>">К выборам</a></td>
         </tr>
     </table>
 </div>
 
-<div id="list" data-project="<?php echo $projectCode; ?>">
+<div id="list" data-project="<?php echo $project_id; ?>">
 
     <div id="filter">
         <input type="text" placeholder="поиск">
@@ -49,6 +49,7 @@ $list = $project->getPlayersOrderByRating();
             $id = $info['id'];
             $player = new Player(
                 $id,
+                $info['project_id'],
                 $info['project'],
                 $info['code'],
                 $info['name'],

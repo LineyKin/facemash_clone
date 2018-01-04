@@ -7,7 +7,7 @@ $playerID = $_GET['code'];
 
 $player = new Player($playerID);
 
-$project = new Project($player->project);
+$project = new Project($player->project_id);
 
 ?>
 
@@ -29,8 +29,8 @@ $project = new Project($player->project);
       <table>
           <tr>
               <td><a href="../../dvastula/">На главную</a></td>
-              <td><a href="../project/?code=<?php echo $player->project?>">К выборам</a></td>
-              <td><a href="../list/?code=<?php echo $player->project?>">К рейтингам</a></td>
+              <td><a href="../project/?id=<?php echo $player->project_id?>">К выборам</a></td>
+              <td><a href="../list/?id=<?php echo $player->project_id?>">К рейтингам</a></td>
           </tr>
       </table>
   </div>
@@ -52,7 +52,7 @@ $project = new Project($player->project);
                   <tr>
                       <td>Проект:</td>
                       <td>
-                          <a href="../project/?code=<?php echo $player->project?>">
+                          <a href="../project/?id=<?php echo $player->project_id?>">
                               <?php echo $project->name;  ?>
                           </a>
                       </td>

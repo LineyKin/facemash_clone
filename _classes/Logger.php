@@ -2,9 +2,9 @@
 
 class Logger {
 
-    static function insertGameResultIntoDB($project, $winnerID, $looserID) {
+    static function insertGameResultIntoDB($project_id, $winnerID, $looserID) {
         $ip = $_SERVER['REMOTE_ADDR'];
-        $query = "INSERT INTO gamelogs (ip, project, winner_id, looser_id) VALUES ('$ip', '$project', $winnerID, $looserID);";
+        $query = "INSERT INTO gamelogs (ip, project_id, winner_id, looser_id) VALUES ('$ip', '$project_id', $winnerID, $looserID);";
         \DB::makeAQuery($query);
     }
 

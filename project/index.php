@@ -2,10 +2,8 @@
 
 require_once "../connectivity.php";
 
-$projectCode = $_GET['code'];
-
-$project = new Project($projectCode);
-
+$projectID = $_GET['id'];
+$project = new Project($projectID);
 $pair = $project->getRandomPairOfPlayers();
 
 if (!$pair) {
@@ -32,7 +30,7 @@ $r_player = new Player($pair["right"]);
     <table>
         <tr>
             <td><a href="../../dvastula/">На главную</a></td>
-            <td><a href="../list/?code=<?php echo $projectCode?>">К рейтингам</a></td>
+            <td><a href="../list/?id=<?php echo $projectID?>">К рейтингам</a></td>
         </tr>
     </table>
 </div>

@@ -10,7 +10,7 @@ class GameEngine {
             $second = rand($from, $to);
         }
 
-        return ['first' => $first, 'second' => $second];
+        return [$first, $second];
     }
 
 }

@@ -5,13 +5,16 @@ class Player {
     public $id, $project, $code, $name, $rating, $wins, $fails;
     protected $gameResult = NULL;
 
-    function __construct($id, $project=NULL, $code=NULL, $name=NULL, $rating=NULL, $wins=NULL, $fails=NULL) {
+    function __construct($id, $project_id=NULL, $project=NULL, $code=NULL, $name=NULL, $rating=NULL, $wins=NULL, $fails=NULL) {
         $this->id = $id;
 
         if($code == NULL) {
 
             global $db_server;
-            $query = "SELECT * FROM players WHERE id = '$id'";
+            $query = "SELECT t0.*, t1.code AS project  
+                      FROM players AS t0 
+                      LEFT JOIN projects AS t1 ON t0.project_id = t1.id 
+                      WHERE t0.id = '$id'";
             mysqli_query($db_server, "SET NAMES 'utf8'");
             $player_info = fromMysqlToArray($query);
 
@@ -20,6 +23,7 @@ class Player {
             $this->wins = $player_info["wins"];
             $this->fails = $player_info["fails"];
             $this->code = $player_info["code"];
+            $this->project_id = $player_info["project_id"];
             $this->project = $player_info["project"];
         }
         else {
@@ -29,6 +33,7 @@ class Player {
             $this->fails = $fails;
             $this->code = $code;
             $this->project = $project;
+            $this->project_id = $project_id;
         }
 
         $this->imgSrc = "/".GLOBAL_PROJECT_NAME.IMG_DIR.$this->project."/".$this->code.".jpg";
@@ -48,7 +53,7 @@ class Player {
         return \DB::makeAQuery($query);
     }
 
-    public function deletePlayerFromPPL() {
+    public function deletePlayerFromPPL() { //PPL - personal_player_logs, table in DB
         $query = "DELETE FROM personal_player_logs WHERE player_id=$this->id";
         return \DB::makeAQuery($query);
     }

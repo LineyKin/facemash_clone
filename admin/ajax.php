@@ -27,7 +27,7 @@ if ( isset($_FILES['playerPhoto']) && isset($_POST['name']) ) {
 
 
 if(isset($_POST['get_list'])) {
-    $projectCode = $_POST['project_code'];
+    $projectCode = $_POST['project_id'];
     $project = new Project($projectCode);
     $playerList = $project->getPlayersOrderByName();
 

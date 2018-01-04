@@ -79,12 +79,13 @@ $(document).ready(function () {
 
 
     $("#project_list").on("change", function () {
-        var code = $('select option:selected').data('code');
+        var id = $('select option:selected').data('id');
+        console.log(id);
         $.ajax({
             type: 'POST',
             url: 'ajax.php',
             data : {
-                project_code: code,
+                project_id: id,
                 get_list: true
             },
             success: function (data) {

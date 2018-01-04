@@ -3,8 +3,7 @@
 require_once "../connectivity.php";
 
 $projects = \Admin::getAllProjects();
-$defaultProjectCode = $projects[0]['code'];
-
+$defaultProjectCode = $projects[0]['id'];
 $defaultProject = new Project($defaultProjectCode);
 $defaultList = $defaultProject->getPlayersOrderByName(); //_p($_SERVER);
 
@@ -57,9 +56,7 @@ $defaultList = $defaultProject->getPlayersOrderByName(); //_p($_SERVER);
                 <select name="project" id="project_list">
                     <?php
                     foreach ($projects as $key => $project) {
-                        $code = $project['code'];
-                        $name = $project['proj_name'];
-                        echo "<option data-code=".$code.">".$name."</option>";
+                        echo "<option data-id=".$project['id'].">".$project['proj_name']."</option>";
                     }
                     ?>
                 </select>
@@ -93,6 +90,7 @@ $defaultList = $defaultProject->getPlayersOrderByName(); //_p($_SERVER);
                         $id = $info['id'];
                         $player = new Player(
                             $id,
+                            $info['project_id'],
                             $info['project'],
                             $info['code'],
                             $info['name'],
@@ -101,6 +99,7 @@ $defaultList = $defaultProject->getPlayersOrderByName(); //_p($_SERVER);
                             $info['fails'],
                             $info['fails']
                         );
+                        _p($player->imgSrc);
                 ?>
                         <tr>
                             <td>
